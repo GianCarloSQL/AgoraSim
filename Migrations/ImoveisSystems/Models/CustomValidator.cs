@@ -15,12 +15,12 @@ namespace ImoveisSystems.Models
             {
                 case "Nome":
                     return new ContextDB().Owners.FirstOrDefault(x => x.Name.Equals(value.ToString())) != null ?
-                    ValidationResult.Success : new ValidationResult("Este Usuario ja existe");
+                        ValidationResult.Success : new ValidationResult("Este Usuario ja existe");
                 case "Birth_Date":
                     DateTime data = (DateTime)value;
                     return DateTime.Now.Year - data.Year >= 18 &&
                            DateTime.Now.Year - data.Year <= 150 ?
-                    ValidationResult.Success : new ValidationResult("Data Invalida.");
+                           ValidationResult.Success : new ValidationResult("Data Invalida.");
             }
             return ValidationResult.Success;
         }
