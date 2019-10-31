@@ -174,8 +174,14 @@
     <Compile Include="Migrations\201910301739239_Config.designer.cs">
       <DependentUpon>201910301739239_Config.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910311147516_AddAbctractMode.cs" />
+    <Compile Include="Migrations\201910311147516_AddAbctractMode.designer.cs">
+      <DependentUpon>201910311147516_AddAbctractMode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AbstractModel.cs" />
     <Compile Include="Models\ContextDB.cs" />
+    <Compile Include="Models\CustomValidator.cs" />
     <Compile Include="Models\Owner.cs" />
     <Compile Include="Models\Property.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -266,6 +272,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910301739239_Config.resx">
       <DependentUpon>201910301739239_Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910311147516_AddAbctractMode.resx">
+      <DependentUpon>201910311147516_AddAbctractMode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

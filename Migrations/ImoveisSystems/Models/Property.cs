@@ -6,11 +6,12 @@ using System.Web;
 
 namespace ImoveisSystems.Models
 {
-    public class Property
+    public class Property: AbstractModel
     {
         public Property() { }
 
-        public Property(string cep,string log, string bairo, string muni, int n,string comlp, Owner o) {
+        public Property(string cep, string log, string bairo, string muni, int n, string comlp, Owner o)
+        {
             Cep = cep;
             Logradouro = log;
             Bairro = bairo;
@@ -22,7 +23,7 @@ namespace ImoveisSystems.Models
 
         [Key]
         public int Id { get; set; }
-        public string Cep { get; set; }
+        public string Cep { get; set; } 
         public string Logradouro { get; set; }
         public string Bairro { get; set; }
         public string Municipio { get; set; }
@@ -30,6 +31,6 @@ namespace ImoveisSystems.Models
         public string Complemento { get; set; }
         public Owner PropertyOwner { get; set; }
 
-        
+
     }
 }

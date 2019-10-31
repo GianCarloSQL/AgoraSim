@@ -20,11 +20,13 @@
             //  to avoid creating duplicate seed data.
             var Proprietario = new Models.Owner
                 ("Gian", DateTime.Now.AddYears(-30), "giang@gmail.com");
-
-            context.Owners.AddOrUpdate(Proprietario);
-            context.Properties.AddOrUpdate(new Models.Property(
-                "89030070", "Casa", "Centro", "Blumenau", 234, "Frente a padaria", Proprietario));
-            context.SaveChanges();
+            if (context.Owners.FirstOrDefault(x => x.Name == "Gian") != null)
+            {
+                context.Owners.AddOrUpdate(Proprietario);
+                context.Properties.AddOrUpdate(new Models.Property(
+                    "89030070", "Casa", "Centro", "Blumenau", 234, "Frente a padaria", Proprietario));
+                context.SaveChanges();
+            }
         }
     }
 }

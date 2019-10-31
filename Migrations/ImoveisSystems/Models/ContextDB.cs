@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ImoveisSystems.Models
 {
-    public class ContextDB:DbContext
+    public class ContextDB : DbContext
     {
         public DbSet<Owner> Owners { get; set; }
         public DbSet<Property> Properties { get; set; }

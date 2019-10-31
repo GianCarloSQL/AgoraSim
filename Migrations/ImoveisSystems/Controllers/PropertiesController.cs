@@ -33,6 +33,7 @@ namespace ImoveisSystems.Controllers
                               Cidade = p.Municipio,
                               Bairo = p.Bairro
                           };
+
             return retorno;
         }
 
