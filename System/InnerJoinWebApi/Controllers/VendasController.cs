@@ -30,7 +30,6 @@ namespace InnerJoinWebApi.Controllers
             var cars = db.Carros;
             var sels = db.Vendas.Where(x => x.DatInc.Year == ano).AsQueryable();
             var marcas = db.Marcas;
-
             var retorno = from c in cars
                           join v in sels
                           on c.Id equals v.Carro
@@ -42,7 +41,7 @@ namespace InnerJoinWebApi.Controllers
                               Modelo = c.Modelo,
                               ValorVenda = v.Valor,
                               AnoVenda = v.DatInc
-                          } ;
+                          };
             return retorno;
         }
 
@@ -90,7 +89,7 @@ namespace InnerJoinWebApi.Controllers
                           join u in usu
                           on s.UsuInc equals u.Id
                           orderby s.DatInc
-                          group new { s } by new { s.DatInc.Year,u.Usuario  }
+                          group new { s } by new { s.DatInc.Year, u.Usuario }
                           into grp
                           select new
                           {
