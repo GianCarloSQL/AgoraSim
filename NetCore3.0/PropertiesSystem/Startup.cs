@@ -11,9 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using NetCore.Models;
-
-namespace NetCore
+using PropertiesSystem.Models;
+namespace PropertiesSystem
 {
     public class Startup
     {
@@ -27,7 +26,7 @@ namespace NetCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<Context>( opt => opt.UseInMemoryDatabase("VirtualContext"));
+            services.AddDbContext<ContextDB>(opt => opt.UseInMemoryDatabase("VirtualContext"));
             services.AddControllers();
         }
 
@@ -38,8 +37,6 @@ namespace NetCore
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 
